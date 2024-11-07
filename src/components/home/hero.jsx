@@ -21,7 +21,7 @@ function Hero() {
                 className="w-full h-full aspect-auto object-cover rounded-md"
               />
             </Link>
-            <div className="absolute top-0 left-0 space-y-4 pt-32 pl-8">
+            <div className="hero-content absolute top-0 left-0 space-y-4 pt-32 pl-8">
               <p className="text-xl">Limited Time Offer!!</p>
               <p className="text-4xl font-semibold">
                 Feel-Good Shopping What You Desire
@@ -37,7 +37,7 @@ function Hero() {
                 className="w-full h-full aspect-auto object-cover"
               />
             </Link>
-            <div className="absolute top-0 left-0 space-y-4 pt-32 pl-8">
+            <div className="hero-content absolute top-0 left-0 space-y-4 pt-32 pl-8">
               <p className="text-xl">Up to 60% off home furniture</p>
               <p className="text-4xl font-semibold">
                 Buy Wooden Furniture Online for home
@@ -53,7 +53,7 @@ function Hero() {
                 className="w-full h-full aspect-auto object-cover"
               />
             </Link>
-            <div className="absolute top-0 left-0 space-y-4 pt-32 pl-8">
+            <div className="hero-content absolute top-0 left-0 space-y-4 pt-32 pl-8">
               <p className="text-xl">Today&apos;s Offer Fashion</p>
               <p className="text-4xl font-semibold">
                 Fashion Best Defined Simply The Style
