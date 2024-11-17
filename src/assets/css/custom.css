@@ -1,0 +1,52 @@
+/* Product Detail Page */
+.product-brand-breadcrumbs > :not([hidden]) {
+  color: gray;
+  & ~ :not([hidden]) {
+    padding-left: 10px;
+  }
+}
+
+.product-description li {
+  @apply relative transition-all duration-300 ease-in;
+  &.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: yellow;
+    bottom: 0;
+    left: 0;
+    transform: translateY(10px);
+  }
+}
+
+.product-colors > div {
+  @apply size-4 rounded-full cursor-pointer transition-all duration-150 ease-in;
+}
+
+/* Prime-React Components Start */
+
+/* Rating Component */
+[data-pc-section="onicon"] {
+  @apply text-yellow-500;
+}
+
+.p-rating-item {
+  @apply ml-0.5;
+}
+
+/* InputNumber Component */
+.p-inputnumber {
+  @apply border-2 rounded-md outline-none;
+  .p-inputnumber-input {
+    @apply p-1 pl-3 outline-none;
+  }
+  .p-inputnumber-button-group {
+    @apply divide-y border-l;
+    .p-inputnumber-button {
+      @apply p-1;
+    }
+  }
+}
+
+/* Prime-React Components End */

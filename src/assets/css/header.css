@@ -1,0 +1,33 @@
+.header-links a {
+  @apply font-semibold text-sm md:text-base relative;
+  &:hover::after {
+    width: 100%;
+    opacity: 1;
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(50%);
+    height: 1px;
+    width: 0;
+    opacity: 0;
+    background: white;
+    transition: all 250ms ease-in-out;
+  }
+}
+
+.animate-top {
+  animation: scroll 600ms ease-in-out;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

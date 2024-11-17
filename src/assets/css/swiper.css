@@ -1,0 +1,18 @@
+.swiper-pagination .swiper-pagination-bullet {
+  @apply size-1.5 lg:size-3;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  @apply w-8 h-1.5 lg:h-3 rounded-lg transition-all duration-500 ease-in;
+}
+
+.swiper-slide .hero-content {
+  transition: all 900ms ease-in-out;
+  transform: translateX(200px);
+  opacity: 0;
+}
+
+.swiper-slide.swiper-slide-active .hero-content {
+  transform: translateX(0);
+  opacity: 1;
+}

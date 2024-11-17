@@ -5,10 +5,14 @@ import { Link } from "react-router-dom";
 function Header() {
   const [isScrolling, setIsScrolling] = useState(false);
   useEffect(() => {
-    document.addEventListener("scroll", () => {
-      if (window.scrollY >= 380) setIsScrolling(true);
+    function handleScroll() {
+      if (window.scrollY >= 380 && document.body.clientHeight >= 1300)
+        setIsScrolling(true);
       else setIsScrolling(false);
-    });
+    }
+    document.addEventListener("scroll", handleScroll);
+
+    return () => document.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -17,12 +21,14 @@ function Header() {
         isScrolling ? "fixed animate-top" : "static"
       } z-10 transition-transform duration-500 ease-in-out`}
     >
-      <div className="bg-blue-500 ">
-        <nav className="flex justify-between items-center max-w-[95%] mx-auto py-6 text-white">
+      <div className="bg-main ">
+        <nav className="flex justify-between items-center max-w-[95%] mx-auto py-3 md:py-6 text-white">
           <div>
-            <Link className="font-bold text-4xl italic">ZilingoMall</Link>
+            <Link to={"/"} className="font-bold text-lg md:text-4xl italic">
+              ZilingoMall
+            </Link>
           </div>
-          <div className="flex items-center bg-white p-1 rounded-md grow mx-40">
+          <div className="lg:flex items-center bg-white p-1 rounded-md grow mx-40 hidden">
             <input
               type="text"
               placeholder="Search Product Here..."
@@ -32,11 +38,11 @@ function Header() {
               <Icon
                 width={25}
                 icon={"mingcute:search-line"}
-                className="text-blue-500 pr-2"
+                className="text-main pr-2"
               />
             </button>
           </div>
-          <ul className="header-links w-1/4 flex items-center justify-around hover:[&_a]:text-white [&_a]:transition [&_a]:duration-200 [&_a]:ease-in [&_a]:font-semibold">
+          <ul className="header-links lg:w-1/4 flex items-center gap-3 lg:justify-around">
             <Link to={"products"}>Products</Link>
             <Link to={"account"}>Account</Link>
             <Link to={"wishlist"}>Wishlist</Link>
@@ -46,7 +52,7 @@ function Header() {
       </div>
 
       {/* Categories Section */}
-      <section className="border-b bg-white">
+      <section className="border-b bg-white md:block hidden">
         <div className="max-w-[95%] mx-auto flex items-center gap-10">
           <span className="border-r py-4 pr-4">
             <span className="flex items-center gap-2">

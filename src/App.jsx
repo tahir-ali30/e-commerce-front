@@ -2,8 +2,9 @@
 // import viteLogo from '/vite.svg'
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
 import Layout from "./layout";
+import Home from "./pages/home";
+import Product from "./pages/product";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="products" element={<Product />} />
         </Route>
       </Routes>
     </>

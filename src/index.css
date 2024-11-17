@@ -1,25 +1,11 @@
+@import url("./assets/css/swiper.css");
+@import url("./assets/css/header.css");
+@import url("./assets/css/custom.css");
+@import url("./assets/css/components/button.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.swiper-pagination .swiper-pagination-bullet {
-  @apply size-3;
-}
-
-.swiper-pagination .swiper-pagination-bullet-active {
-  @apply w-8 h-3 rounded-lg transition-all duration-500 ease-in;
-}
-
-.swiper-slide .hero-content {
-  transition: all 900ms ease-in-out;
-  transform: translateX(200px);
-  opacity: 0;
-}
-
-.swiper-slide.swiper-slide-active .hero-content {
-  transform: translateX(0);
-  opacity: 1;
-}
 
 .btn {
   @apply border rounded-md py-2 px-5;
@@ -27,38 +13,4 @@
 
 .btn-primary {
   @apply bg-blue-600 hover:bg-blue-700 text-white transition-colors duration-300 ease-in;
-}
-
-.header-links a {
-  position: relative;
-  &:hover {
-    &::after {
-      width: 100%;
-    }
-  }
-  &::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translateY(50%);
-    height: 1px;
-    width: 0;
-    background: white;
-    transition: all 250ms ease-in-out;
-  }
-}
-
-.animate-top {
-  animation: scroll 600ms ease-in-out;
-}
-
-@keyframes scroll {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
 }

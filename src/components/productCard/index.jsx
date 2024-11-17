@@ -26,10 +26,6 @@ function ProductCard({ data }) {
           value={data?.rating}
           cancel={false}
           readOnly
-          pt={{
-            onIcon: { className: "text-yellow-500" },
-            item: { className: "ml-1" },
-          }}
         />
         <p>{data?.price}</p>
       </div>

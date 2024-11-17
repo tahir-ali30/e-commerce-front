@@ -21,12 +21,14 @@ function Hero() {
                 className="w-full h-full aspect-auto object-cover rounded-md"
               />
             </Link>
-            <div className="hero-content absolute top-0 left-0 space-y-4 pt-32 pl-8">
-              <p className="text-xl">Limited Time Offer!!</p>
-              <p className="text-4xl font-semibold">
+            <div className="hero-content absolute top-0 left-0 space-y-2 md:space-y-4 lg:pt-32 lg:pl-8 p-3 max-w-[50%] lg:max-w-max">
+              <p className="text-xs md:text-xl">Limited Time Offer!!</p>
+              <p className="text-xs md:text-2xl lg:text-4xl font-semibold">
                 Feel-Good Shopping What You Desire
               </p>
-              <p className="text-xl">There Are Many Variations Of Passages</p>
+              <p className="text-xs md:text-xl">
+                There Are Many Variations Of Passages
+              </p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
@@ -37,12 +39,14 @@ function Hero() {
                 className="w-full h-full aspect-auto object-cover"
               />
             </Link>
-            <div className="hero-content absolute top-0 left-0 space-y-4 pt-32 pl-8">
-              <p className="text-xl">Up to 60% off home furniture</p>
-              <p className="text-4xl font-semibold">
+            <div className="hero-content absolute top-0 left-0 space-y-2 md:space-y-4 lg:pt-32 lg:pl-8 p-3 max-w-[50%] lg:max-w-max">
+              <p className="text-xs md:text-xl">Up to 60% off home furniture</p>
+              <p className="text-xs md:text-2xl lg:text-4xl font-semibold">
                 Buy Wooden Furniture Online for home
               </p>
-              <p className="text-xl">There are many variations of passages.</p>
+              <p className="text-xs md:text-xl">
+                There are many variations of passages.
+              </p>
             </div>
           </SwiperSlide>
           <SwiperSlide>
@@ -53,12 +57,14 @@ function Hero() {
                 className="w-full h-full aspect-auto object-cover"
               />
             </Link>
-            <div className="hero-content absolute top-0 left-0 space-y-4 pt-32 pl-8">
-              <p className="text-xl">Today&apos;s Offer Fashion</p>
-              <p className="text-4xl font-semibold">
+            <div className="hero-content absolute top-0 left-0 space-y-2 md:space-y-4 lg:pt-32 lg:pl-8 p-3 max-w-[50%] lg:max-w-max">
+              <p className="text-xs md:text-xl">Today&apos;s Offer Fashion</p>
+              <p className="text-xs md:text-2xl lg:text-4xl font-semibold">
                 Fashion Best Defined Simply The Style
               </p>
-              <p className="text-xl">There are many variations of passages.</p>
+              <p className="text-xs md:text-xl">
+                There are many variations of passages.
+              </p>
             </div>
           </SwiperSlide>
         </Swiper>

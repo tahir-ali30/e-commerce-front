@@ -1,0 +1,3 @@
+.btn-primary {
+  @apply bg-main px-8 py-2 rounded-md text-white grow;
+}

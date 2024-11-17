@@ -1,8 +1,8 @@
 function Footer() {
   return (
     <footer className="w-full p-10 pb-0 border-t bg-blue-500 text-white">
-      <div className="grid grid-cols-9 gap-2 pb-8">
-        <div className="col-span-2 border-r">
+      <div className="grid grid-cols-1 md:grid-cols-9 gap-6 md:gap-2 pb-8">
+        <div className="md:col-span-2 border-r">
           <p className="mb-8 font-semibold text-xl">Contact Us</p>
           <p>
             Demo Store <br />
@@ -14,31 +14,39 @@ function Footer() {
           <p className="my-2">0123-456-789</p>
           <p>demo@demo.com</p>
         </div>
-        <div className="col-span-7">
-          <div className="px-16">
-            <ul className="flex justify-between [&_li]:space-y-1.5">
+        <div className="md:col-span-7">
+          <div className="md:px-16">
+            <ul className="flex justify-between flex-wrap gap-4 [&_li]:space-y-1.5">
               <li>
-                <p className="mb-8 font-semibold text-xl">Products</p>
+                <p className="md:mb-8 font-semibold md:text-xl underline">
+                  Products
+                </p>
                 <p>Prices Drop</p>
                 <p>New Products</p>
                 <p>Best Sales</p>
               </li>
               <li>
-                <p className="mb-8 font-semibold text-xl">Our Company</p>
+                <p className="md:mb-8 font-semibold md:text-xl underline">
+                  Our Company
+                </p>
                 <p>Delivery</p>
                 <p>Legal Notice</p>
                 <p>Terms and Conditions</p>
                 <p>About Us</p>
               </li>
               <li>
-                <p className="mb-8 font-semibold text-xl">Information</p>
+                <p className="md:mb-8 font-semibold md:text-xl underline">
+                  Information
+                </p>
                 <p>Delivery</p>
                 <p>Legal Notice</p>
                 <p>Terms and Conditions</p>
                 <p>About Us</p>
               </li>
               <li>
-                <p className="mb-8 font-semibold text-xl">Trending Category</p>
+                <p className="md:mb-8 font-semibold md:text-xl underline">
+                  Trending Category
+                </p>
                 <p>Camera Accessories</p>
                 <p>Gaming & Accessories</p>
                 <p>Headphone Cushions</p>
