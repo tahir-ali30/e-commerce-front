@@ -124,7 +124,6 @@ function Home() {
           Featured Products
         </span>
         <Swiper
-          className="relative group"
           slidesPerView={2}
           spaceBetween={30}
           modules={[Navigation]}
@@ -205,7 +204,7 @@ function Home() {
       <section className="space-y-4">
         <span className="text-4xl font-medium">New Products</span>
         <Swiper
-          className="!w-full relative group"
+          className="!w-full"
           slidesPerView={2}
           spaceBetween={30}
           modules={[Navigation]}
@@ -248,7 +247,7 @@ function Home() {
       {/* Brands Section Start */}
       <section className="my-5">
         <Swiper
-          className="!w-full relative border-y group"
+          className="!w-full border-y"
           slidesPerView={3}
           spaceBetween={30}
           modules={[Navigation]}

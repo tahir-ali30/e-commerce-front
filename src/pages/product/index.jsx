@@ -1,15 +1,27 @@
-import { Icon } from "@iconify-icon/react/dist/iconify.js";
-import { Rating } from "primereact/rating";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
+import { Icon } from "@iconify-icon/react/dist/iconify.js";
+import { Rating } from "primereact/rating";
 import { InputNumber } from "primereact/inputnumber";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
+import ProductCard from "../../components/productCard";
+import ReviewCard from "../../components/reviewCard";
+import Products from "../../constant/MOCK_DATA.json";
+import SwiperNavigations from "../../components/swiperNavigations";
 
 function Product() {
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState("64GB");
   const [quantity, setQuantity] = useState(1);
   const [selectedTab, setSelectedTab] = useState("description");
+
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
     <>
       {/* Breadcrumbs Start */}
@@ -163,8 +175,8 @@ function Product() {
         </div>
       </div>
 
-      <div className="mt-16">
-        <ul className="border-b pb-2 flex justify-center items-center gap-10 text-2xl product-description">
+      <div className="mt-16 bg-main rounded-md">
+        <ul className="border-t pt-4 flex justify-center items-center gap-10 text-2xl product-detail-tabs bg-white">
           <li
             className={`cursor-pointer ${
               selectedTab === "description" ? "active" : ""
@@ -182,7 +194,91 @@ function Product() {
             Reviews
           </li>
         </ul>
+        <div className="p-8 text-white">
+          {selectedTab === "description" && (
+            <div className="text-xl">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Doloremque aut neque quis eveniet aliquam? Quas, quae. Animi
+              maiores ut omnis repellat dignissimos ratione saepe, sunt sit
+              natus hic reiciendis nulla quod alias quibusdam repudiandae
+              laboriosam neque eveniet sequi nihil veritatis! Similique, facere
+              quas! Sed repellat laudantium neque eligendi, incidunt aspernatur
+              rerum ut nihil quis. Aperiam iure officia temporibus ducimus
+              impedit, reprehenderit ipsum tempore accusamus, dolorum repellat
+              neque voluptatem animi obcaecati distinctio fugiat dignissimos
+              odio tenetur ullam iste cum, quasi vero eos? Odio, enim
+              exercitationem. Illo aperiam quaerat commodi accusamus quae ut
+              reprehenderit distinctio magni perferendis, ab ea, consequatur
+              labore eius. Possimus suscipit cum tenetur beatae repellendus
+              impedit sed odit sint excepturi, voluptates ipsam consequatur
+              omnis quisquam totam deleniti fuga doloremque veniam aliquam
+              aspernatur voluptatum numquam alias praesentium! Esse placeat
+              explicabo quidem provident? Consequuntur vitae neque laboriosam
+              ipsam laudantium odit possimus, quisquam sequi, eum ipsa quos
+              doloribus pariatur! Nobis quae facilis id nam suscipit dolores
+              similique aut corporis praesentium officiis quo consequatur at
+              voluptates neque libero odio expedita totam, quas excepturi omnis
+              magni vitae eos! Autem eos molestias perspiciatis voluptates,
+              aliquam unde ducimus voluptatem ut quia suscipit animi, excepturi
+              asperiores repudiandae vel, inventore alias dolorem natus dolores
+              laboriosam officiis rerum quibusdam?
+            </div>
+          )}
+          {selectedTab === "review" && (
+            <div>
+              <Swiper
+                modules={[Autoplay]}
+                slidesPerView={3}
+                spaceBetween={40}
+                autoplay
+                loop
+              >
+                {Array.from({ length: 5 }).map((_, index) => (
+                  <SwiperSlide key={index}>
+                    <ReviewCard />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          )}
+        </div>
       </div>
+
+      {/* Related Products Start */}
+      <div className="mt-20 space-y-4">
+        <div className="text-3xl">You might also like</div>
+        <div>
+          <Swiper
+            // onBeforeInit={(swiper) => {
+            //   swiper.params.navigation.prevEl = prevRef.current;
+            //   swiper.params.navigation.nextEl = nextRef.current;
+            // }}
+            // navigation={{
+            //   prevEl: prevRef.current,
+            //   nextEl: nextRef.current,
+            // }}
+            modules={[Autoplay]}
+            slidesPerView={3}
+            spaceBetween={40}
+            autoplay
+            loop
+            breakpoints={{
+              600: {
+                slidesPerView: 5,
+                spaceBetween: 40,
+              },
+            }}
+          >
+            {Products.slice(40).map((item, index) => (
+              <SwiperSlide key={index}>
+                <ProductCard data={item} />
+              </SwiperSlide>
+            ))}
+            {/* <SwiperNavigations leftRef={prevRef} rightRef={nextRef} /> */}
+          </Swiper>
+        </div>
+      </div>
+      {/* Related Products End */}
     </>
   );
 }
