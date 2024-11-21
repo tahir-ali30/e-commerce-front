@@ -58,9 +58,20 @@
   .p-inputnumber-button-group {
     @apply divide-y border-l;
     .p-inputnumber-button {
-      @apply p-1;
+      @apply p-1 active:bg-main active:text-white;
     }
   }
 }
 
 /* Prime-React Components End */
+
+/* .PhoneInputInput {
+  @apply bg-white dark:bg-slate-900  transition duration-300 ease-in-out border border-slate-200
+  dark:border-slate-700 dark:text-slate-300  focus:ring-1 focus:ring-slate-600
+  dark:focus:ring-slate-900 focus:outline-none focus:ring-opacity-90 rounded
+   placeholder:text-slate-400 text-slate-900 text-sm px-3  placeholder:font-normal dark:placeholder:text-slate-400 block w-full;
+} */
+
+.PhoneInputCountry {
+  @apply border-r pr-2;
+}

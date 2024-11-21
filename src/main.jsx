@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/bundle";
+import "react-phone-number-input/style.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

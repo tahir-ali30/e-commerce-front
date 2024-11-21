@@ -260,10 +260,14 @@ function Product() {
             modules={[Autoplay]}
             slidesPerView={3}
             spaceBetween={40}
-            autoplay
+            // autoplay
             loop
             breakpoints={{
               600: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+              800: {
                 slidesPerView: 5,
                 spaceBetween: 40,
               },

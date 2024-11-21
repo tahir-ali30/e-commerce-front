@@ -16,12 +16,12 @@ function Header() {
   }, []);
 
   return (
-    <header
-      className={`w-full ${
-        isScrolling ? "fixed animate-top" : "static"
-      } z-10 transition-transform duration-500 ease-in-out`}
-    >
-      <div className="bg-main ">
+    <header className={`w-full`}>
+      <div
+        className={`bg-main w-full ${
+          isScrolling ? "fixed animate-top border-b" : "static"
+        } z-10 transition-transform duration-500 ease-in-out`}
+      >
         <nav className="flex justify-between items-center max-w-[95%] mx-auto py-3 md:py-6 text-white">
           <div>
             <Link to={"/"} className="font-bold text-lg md:text-4xl italic">
@@ -31,7 +31,7 @@ function Header() {
           <div className="lg:flex items-center bg-white p-1 rounded-md grow mx-40 hidden">
             <input
               type="text"
-              placeholder="Search Product Here..."
+              placeholder="Search Here"
               className="p-1 grow outline-none text-black"
             />
             <button className="flex justify-center items-center">
