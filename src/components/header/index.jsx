@@ -1,9 +1,13 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { openCartModal } from "../../store/modals/slice";
 
 function Header() {
   const [isScrolling, setIsScrolling] = useState(false);
+  const dispatcher = useDispatch();
+
   useEffect(() => {
     function handleScroll() {
       if (window.scrollY >= 380 && document.body.clientHeight >= 1300)
@@ -46,7 +50,7 @@ function Header() {
             <Link to={"products"}>Products</Link>
             <Link to={"account"}>Account</Link>
             <Link to={"wishlist"}>Wishlist</Link>
-            <Link to={"cart"}>Cart</Link>
+            <Link onClick={() => dispatcher(openCartModal())}>Cart</Link>
           </ul>
         </nav>
       </div>

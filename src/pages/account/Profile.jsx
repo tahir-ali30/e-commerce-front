@@ -7,11 +7,15 @@ function Profile() {
   const { control } = useForm();
   return (
     <div className="p-5 border rounded-md mt-5">
-      <div className="grid grid-cols-2 justify-center gap-4">
+      <div className="grid md:grid-cols-2 md:justify-center gap-4">
         <Textinput label={"First Name"} placeholder="Enter Your First Name" />
         <Textinput label={"Last Name"} placeholder="Enter Your Last Name" />
         <Textinput label={"Email"} placeholder="Enter Your Email" />
-        <Textinput label={"Birthdate"} placeholder="Enter Your Birthdate" />
+        <Textinput
+          label={"Birthdate"}
+          placeholder="Enter Your Birthdate"
+          type={"date"}
+        />
         <div className="formGroup">
           <label className="form-label">Phone#</label>
           <PhoneInputWithCountry

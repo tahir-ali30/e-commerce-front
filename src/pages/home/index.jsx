@@ -1,12 +1,15 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
 import Hero from "../../components/home/hero";
 import ProductCard from "../../components/productCard";
-import Products from "../../constant/MOCK_DATA.json";
+import products from "../../constant/MOCK_DATA.json";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import SwiperNavigations from "../../components/swiperNavigations";
-import { useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { brands } from "../../constant/data";
+import { v4 as uuidv4 } from "uuid";
+import { addToCart as saveToCart } from "../../store/cart/slice";
+import { useDispatch, useSelector } from "react-redux";
 
 function Home() {
   const featuredProductsNavigationPrevRef = useRef(null);
@@ -15,6 +18,35 @@ function Home() {
   const newProductsNavigationNextRef = useRef(null);
   const brandsNavigationPrevRef = useRef(null);
   const brandsNavigationNextRef = useRef(null);
+
+  const Products = products.map((i) => ({ ...i, id: uuidv4() }));
+
+  const dispatcher = useDispatch();
+  const cart = useSelector((state) => state.cart);
+  const timeoutId = useRef(null);
+
+  const addToCart = (data) => {
+    dispatcher(saveToCart({ item: data }));
+  };
+
+  useEffect(() => {
+    if (timeoutId.current) {
+      clearTimeout(timeoutId.current);
+    }
+
+    if (cart?.items.length > 0) {
+      timeoutId.current = setTimeout(() => {
+        console.log(cart);
+      }, 2500);
+    }
+
+    return () => {
+      if (timeoutId.current) {
+        clearTimeout(timeoutId.current);
+      }
+    };
+  }, [cart]);
+
   return (
     <div className="space-y-8">
       <Hero />
@@ -151,7 +183,7 @@ function Home() {
                 key={index}
                 className="first:border-l-0 border-l pl-3"
               >
-                <ProductCard data={item} />
+                <ProductCard data={item} addToCart={addToCart} />
               </SwiperSlide>
             ))
           }
@@ -232,7 +264,7 @@ function Home() {
                 key={index}
                 className="first:border-l-0 border-l pl-3"
               >
-                <ProductCard data={item} />
+                <ProductCard data={item} addToCart={addToCart} />
               </SwiperSlide>
             ))
           }

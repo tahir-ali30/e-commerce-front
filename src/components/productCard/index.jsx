@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Rating } from "primereact/rating";
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
 
-function ProductCard({ data }) {
+function ProductCard({ data, addToCart }) {
   return (
     <div className="relative space-y-1.5 group">
       <Link className="relative ">
@@ -41,7 +41,9 @@ function ProductCard({ data }) {
         />
         <p>{data?.price}</p>
       </div>
-      <button className="btn btn-primary mt-2">Add to Cart</button>
+      <button onClick={() => addToCart(data)} className="btn btn-primary mt-2">
+        Add to Cart
+      </button>
     </div>
   );
 }

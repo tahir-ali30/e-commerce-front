@@ -6,11 +6,15 @@ import { BrowserRouter } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/bundle";
 import "react-phone-number-input/style.css";
+import { Provider } from "react-redux";
+import store from "./store/index.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </BrowserRouter>
   </StrictMode>
 );

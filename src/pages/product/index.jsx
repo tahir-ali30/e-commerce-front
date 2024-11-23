@@ -230,7 +230,7 @@ function Product() {
                 modules={[Autoplay]}
                 slidesPerView={3}
                 spaceBetween={40}
-                autoplay
+                // autoplay
                 loop
               >
                 {Array.from({ length: 5 }).map((_, index) => (

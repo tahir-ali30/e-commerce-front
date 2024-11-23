@@ -13,7 +13,7 @@
   @apply block text-secondary-500 font-light leading-4 text-xs mt-2;
 }
 .formGroup {
-  @apply relative;
+  @apply relative w-full;
   &.has-error {
     .form-control {
       @apply border-danger-500 focus:ring-danger-500  focus:ring-opacity-90 focus:ring-1;

@@ -4,7 +4,7 @@ import Textinput from "../../components/ui/Textinput";
 function Address() {
   return (
     <div className="p-5 border rounded-md mt-5">
-      <div className="grid grid-cols-2 justify-center gap-4">
+      <div className="grid md:grid-cols-2 md:justify-center gap-4">
         <Textinput label={"Address #1"} placeholder="Enter Your Address #1" />
         <Textinput
           label={"Address #2"}

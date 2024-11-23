@@ -4,7 +4,7 @@ import Textinput from "../../components/ui/Textinput";
 function Password() {
   return (
     <div className="p-5 border rounded-md mt-5">
-      <div className="grid grid-cols-2 justify-center gap-4">
+      <div className="grid md:grid-cols-2 md:justify-center gap-4">
         <Textinput
           label={"Current Password"}
           placeholder="Enter Your Current Password"
@@ -16,7 +16,7 @@ function Password() {
         <Textinput
           label={"Confirm Password"}
           placeholder="Confirm Your New Password"
-          classGroup="col-span-2"
+          classGroup="md:col-span-2"
         />
       </div>
       <div className="w-full flex justify-end mt-6">
