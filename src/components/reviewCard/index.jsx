@@ -4,7 +4,7 @@ import moment from "moment";
 
 function ReviewCard() {
   return (
-    <div className="bg-white text-black-500 p-5 rounded-lg space-y-3">
+    <div className="bg-white text-black p-5 rounded-lg space-y-3">
       <div className="flex items-center gap-3">
         <span>
           <img src={NoProfile} alt="" />

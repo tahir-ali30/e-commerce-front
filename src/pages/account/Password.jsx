@@ -21,7 +21,7 @@ function Password() {
       </div>
       <div className="w-full flex justify-end mt-6">
         <div>
-          <button className="btn-primary">Save</button>
+          <button className="btn btn-primary">Save</button>
         </div>
       </div>
     </div>

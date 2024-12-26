@@ -162,7 +162,7 @@ function Product() {
               />
             </div>
             <div>
-              <button className="btn-primary">Add to Cart</button>
+              <button className="btn btn-primary">Add to Cart</button>
             </div>
             <div>
               <button className="flex items-center justify-center gap-1.5 hover:text-main transition-colors duration-300 ease-in-out">
@@ -230,7 +230,7 @@ function Product() {
                 modules={[Autoplay]}
                 slidesPerView={3}
                 spaceBetween={40}
-                // autoplay
+                autoplay
                 loop
               >
                 {Array.from({ length: 5 }).map((_, index) => (
@@ -260,7 +260,7 @@ function Product() {
             modules={[Autoplay]}
             slidesPerView={3}
             spaceBetween={40}
-            // autoplay
+            autoplay
             loop
             breakpoints={{
               600: {

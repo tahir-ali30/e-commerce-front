@@ -57,7 +57,7 @@
 }
 
 .inputGroup:focus-within .input-group-text {
-  @apply border-black-500 dark:border-slate-900;
+  @apply border-black dark:border-slate-900;
 }
 /* .merged .inputGroup:focus-within .input-group-text {
 } */

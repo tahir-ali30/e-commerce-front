@@ -2,7 +2,7 @@ import { Icon } from "@iconify-icon/react/dist/iconify.js";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { openCartModal } from "../../store/modals/slice";
+import { openCartModal, openCategoryModal } from "../../store/modals/slice";
 
 function Header() {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -18,6 +18,15 @@ function Header() {
 
     return () => document.removeEventListener("scroll", handleScroll);
   }, []);
+
+  function openCart() {
+    dispatcher(openCartModal());
+    document.body.style.overflow = "hidden";
+  }
+  function openCategorySidebar() {
+    dispatcher(openCategoryModal());
+    document.body.style.overflow = "hidden";
+  }
 
   return (
     <header className={`w-full`}>
@@ -50,7 +59,7 @@ function Header() {
             <Link to={"products"}>Products</Link>
             <Link to={"account"}>Account</Link>
             <Link to={"wishlist"}>Wishlist</Link>
-            <Link onClick={() => dispatcher(openCartModal())}>Cart</Link>
+            <Link onClick={openCart}>Cart</Link>
           </ul>
         </nav>
       </div>
@@ -59,10 +68,13 @@ function Header() {
       <section className="border-b bg-white md:block hidden">
         <div className="max-w-[95%] mx-auto flex items-center gap-10">
           <span className="border-r py-4 pr-4">
-            <span className="flex items-center gap-2">
+            <button
+              className="flex items-center gap-2"
+              onClick={openCategorySidebar}
+            >
               <Icon icon={"material-symbols-light:menu"} width={20} />
               <span>Browse Categories</span>
-            </span>
+            </button>
           </span>
           <span>
             <ul className="list-none flex items-center gap-8">

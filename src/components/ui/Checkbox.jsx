@@ -7,7 +7,7 @@ const Checkbox = ({
   value,
   name,
   onChange,
-  activeClass = "ring-black-500  bg-slate-900 dark:bg-slate-700 dark:ring-slate-700 ",
+  activeClass = "ring-black  bg-slate-900 dark:bg-slate-700 dark:ring-slate-700 ",
 }) => {
   return (
     <label

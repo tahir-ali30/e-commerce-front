@@ -6,6 +6,7 @@ const modalSlice = createSlice({
   initialState: {
     loginModal: false,
     cartModal: false,
+    categoryModal: false,
   },
   reducers: {
     openLoginModal: (state) => {
@@ -20,9 +21,21 @@ const modalSlice = createSlice({
     closeCartModal: (state) => {
       state.cartModal = false;
     },
+    openCategoryModal: (state) => {
+      state.categoryModal = true;
+    },
+    closeCategoryModal: (state) => {
+      state.categoryModal = false;
+    },
   },
 });
 
 export default modalSlice.reducer;
-export const { openLoginModal, closeLoginModal, openCartModal, closeCartModal } =
-  modalSlice.actions;
+export const {
+  openLoginModal,
+  closeLoginModal,
+  openCartModal,
+  closeCartModal,
+  openCategoryModal,
+  closeCategoryModal,
+} = modalSlice.actions;

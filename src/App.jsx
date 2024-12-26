@@ -3,9 +3,9 @@
 import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import "./App.css";
 import Layout from "./layout";
 import ComingSoon from "./pages/ComingSoon";
+import AboutUs from "./pages/about";
 const Home = lazy(() => import("./pages/home"));
 const Product = lazy(() => import("./pages/product"));
 const Account = lazy(() => import("./pages/account"));
@@ -18,6 +18,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="products" element={<Product />} />
           <Route path="account" element={<Account />} />
+          <Route path="about" element={<AboutUs />} />
 
           <Route path="*" element={<ComingSoon />} />
         </Route>

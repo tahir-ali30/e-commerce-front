@@ -1,7 +1,7 @@
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
 import Hero from "../../components/home/hero";
 import ProductCard from "../../components/productCard";
-import products from "../../constant/MOCK_DATA.json";
+import { products } from "../../constant/products-data";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import SwiperNavigations from "../../components/swiperNavigations";
@@ -10,16 +10,10 @@ import { brands } from "../../constant/data";
 import { v4 as uuidv4 } from "uuid";
 import { addToCart as saveToCart } from "../../store/cart/slice";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 function Home() {
-  const featuredProductsNavigationPrevRef = useRef(null);
-  const featuredProductsNavigationNextRef = useRef(null);
-  const newProductsNavigationPrevRef = useRef(null);
-  const newProductsNavigationNextRef = useRef(null);
-  const brandsNavigationPrevRef = useRef(null);
-  const brandsNavigationNextRef = useRef(null);
-
-  const Products = products.map((i) => ({ ...i, id: uuidv4() }));
+  // const Products = products.map((i) => ({ ...i, id: uuidv4() }));
 
   const dispatcher = useDispatch();
   const cart = useSelector((state) => state.cart);
@@ -27,6 +21,7 @@ function Home() {
 
   const addToCart = (data) => {
     dispatcher(saveToCart({ item: data }));
+    toast("Item added to cart!");
   };
 
   useEffect(() => {
@@ -95,7 +90,7 @@ function Home() {
 
       {/* Category Cards Start */}
       <div className="w-full overflow-hidden">
-        <ul className="flex items-center justify-evenly gap-4 [&_li]:text-center [&_li]:space-y-2 [&_p]:font-semibold [&_p]:text-sm [&_p]:md:text-lg overflow-scroll">
+        <ul className="flex items-center justify-evenly gap-4 [&_li]:text-center [&_li]:space-y-2 [&_p]:font-semibold [&_p]:text-sm [&_p]:md:text-lg overflow-x-scroll">
           <li>
             <div className="w-full flex justify-center rounded-full size-14 md:size-auto">
               <img
@@ -160,14 +155,8 @@ function Home() {
           spaceBetween={30}
           modules={[Navigation]}
           navigation={{
-            nextEl: featuredProductsNavigationPrevRef.current,
-            prevEl: featuredProductsNavigationPrevRef.current,
-          }}
-          onBeforeInit={(swiper) => {
-            swiper.params.navigation.prevEl =
-              featuredProductsNavigationPrevRef.current;
-            swiper.params.navigation.nextEl =
-              featuredProductsNavigationNextRef.current;
+            nextEl: ".next-featuredProduct",
+            prevEl: ".prev-featuredProduct",
           }}
           breakpoints={{
             600: {
@@ -178,7 +167,7 @@ function Home() {
         >
           {
             // Array.from({ length: 6 }).map((_, index) => (
-            Products.slice(0, 10).map((item, index) => (
+            products.slice(0, 10).map((item, index) => (
               <SwiperSlide
                 key={index}
                 className="first:border-l-0 border-l pl-3"
@@ -187,10 +176,7 @@ function Home() {
               </SwiperSlide>
             ))
           }
-          <SwiperNavigations
-            leftRef={featuredProductsNavigationPrevRef}
-            rightRef={featuredProductsNavigationNextRef}
-          />
+          <SwiperNavigations selector={"featuredProduct"} />
         </Swiper>
       </section>
       {/* Featured Products End */}
@@ -241,14 +227,8 @@ function Home() {
           spaceBetween={30}
           modules={[Navigation]}
           navigation={{
-            nextEl: newProductsNavigationNextRef.current,
-            prevEl: newProductsNavigationPrevRef.current,
-          }}
-          onBeforeInit={(swiper) => {
-            swiper.params.navigation.prevEl =
-              newProductsNavigationPrevRef.current;
-            swiper.params.navigation.nextEl =
-              newProductsNavigationNextRef.current;
+            nextEl: ".next-newProduct",
+            prevEl: ".prev-newProduct",
           }}
           breakpoints={{
             600: {
@@ -259,7 +239,7 @@ function Home() {
         >
           {
             // Array.from({ length: 6 }).map((_, index) => (
-            Products.slice(11, 20).map((item, index) => (
+            products.slice(11, 20).map((item, index) => (
               <SwiperSlide
                 key={index}
                 className="first:border-l-0 border-l pl-3"
@@ -268,10 +248,7 @@ function Home() {
               </SwiperSlide>
             ))
           }
-          <SwiperNavigations
-            leftRef={newProductsNavigationPrevRef}
-            rightRef={newProductsNavigationNextRef}
-          />
+          <SwiperNavigations selector={"newProduct"} />
         </Swiper>
       </section>
       {/* New Products End */}
@@ -284,12 +261,8 @@ function Home() {
           spaceBetween={30}
           modules={[Navigation]}
           navigation={{
-            nextEl: brandsNavigationNextRef.current,
-            prevEl: brandsNavigationPrevRef.current,
-          }}
-          onBeforeInit={(swiper) => {
-            swiper.params.navigation.prevEl = brandsNavigationPrevRef.current;
-            swiper.params.navigation.nextEl = brandsNavigationNextRef.current;
+            nextEl: ".next-brands",
+            prevEl: ".prev-brands",
           }}
           breakpoints={{
             600: {
@@ -313,10 +286,7 @@ function Home() {
               </SwiperSlide>
             ))
           }
-          <SwiperNavigations
-            leftRef={brandsNavigationPrevRef}
-            rightRef={brandsNavigationNextRef}
-          />
+          <SwiperNavigations selector={"brands"} />
         </Swiper>
       </section>
 

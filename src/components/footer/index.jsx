@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
-    <footer className="w-full p-10 pb-0 border-t bg-blue-500 text-white">
+    <footer className="w-full p-10 pb-0 border-t bg-blue-500 text-white [&_a]:block">
       <div className="grid grid-cols-1 md:grid-cols-9 gap-6 md:gap-2 pb-8">
         <div className="md:col-span-2 border-r">
           <p className="mb-8 font-semibold text-xl">Contact Us</p>
@@ -32,7 +34,7 @@ function Footer() {
                 <p>Delivery</p>
                 <p>Legal Notice</p>
                 <p>Terms and Conditions</p>
-                <p>About Us</p>
+                <Link to={"about"}>About Us</Link>
               </li>
               <li>
                 <p className="md:mb-8 font-semibold md:text-xl underline">
