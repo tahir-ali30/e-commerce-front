@@ -7,7 +7,7 @@ import {
 } from "@headlessui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { Icon } from "@iconify-icon/react/dist/iconify.js";
-import { closeCartModal } from "../../store/modals/slice";
+import { closeWishlistModal } from "../../store/modals/slice";
 import ProductCard from "./productCard";
 
 const products = [
@@ -37,17 +37,21 @@ const products = [
   },
 ];
 
-export default function CartSidebarMix() {
-  const { cartModal } = useSelector((state) => state.modals);
-  const [open, setOpen] = useState(cartModal);
+export default function WishlistSidebar() {
+  const { wishlistModal } = useSelector((state) => state.modals);
+  const [open, setOpen] = useState(wishlistModal);
   const dispatcher = useDispatch();
 
-  function closeCart() {
-    dispatcher(closeCartModal());
+  function closeWishlist() {
+    dispatcher(closeWishlistModal());
     document.body.style.overflow = "auto";
   }
   return (
-    <Dialog open={cartModal} onClose={closeCart} className="relative z-10">
+    <Dialog
+      open={wishlistModal}
+      onClose={closeWishlist}
+      className="relative z-10"
+    >
       <DialogBackdrop
         transition
         className="fixed inset-0 bg-black/75 transition-opacity duration-500 ease-in-out data-[closed]:opacity-0"
@@ -58,18 +62,18 @@ export default function CartSidebarMix() {
           <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
             <DialogPanel
               transition
-              className="pointer-events-auto w-screen max-w-md transform transition duration-500 ease-in-out data-[closed]:translate-x-full sm:duration-700"
+              className="pointer-events-auto w-screen max-w-sm transform transition duration-500 ease-in-out data-[closed]:translate-x-full sm:duration-700"
             >
               <div className="flex h-full flex-col bg-white shadow-xl">
                 <div className="flex-1 overflow-y-auto">
                   <div className="flex items-center justify-between bg-main">
                     <DialogTitle className="w-full flex justify-between items-center p-2 px-4 text-xl text-white">
-                      Cart
+                      Wishlist
                     </DialogTitle>
                     <div className="flex h-7 items-center">
                       <button
                         type="button"
-                        onClick={closeCart}
+                        onClick={closeWishlist}
                         className="relative p-2 text-white hover:text-black"
                       >
                         <span className="absolute" />
@@ -86,10 +90,7 @@ export default function CartSidebarMix() {
                         className="-my-6 divide-y divide-gray-200 px-4"
                       >
                         {products.map((product, index) => (
-                          <ProductCard
-                            data={product}
-                            key={`prod-${index + 1}`}
-                          />
+                          <ProductCard key={index} data={product} />
                         ))}
                       </ul>
                     </div>
@@ -118,7 +119,7 @@ export default function CartSidebarMix() {
                       or{" "}
                       <button
                         type="button"
-                        onClick={closeCart}
+                        onClick={closeWishlist}
                         className="font-medium text-indigo-600 hover:text-indigo-500"
                       >
                         Continue Shopping

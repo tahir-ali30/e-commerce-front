@@ -7,7 +7,8 @@ import Layout from "./layout";
 import ComingSoon from "./pages/ComingSoon";
 import AboutUs from "./pages/about";
 const Home = lazy(() => import("./pages/home"));
-const Product = lazy(() => import("./pages/product"));
+const Product = lazy(() => import("./pages/productDetail"));
+const Products = lazy(() => import("./pages/products"));
 const Account = lazy(() => import("./pages/account"));
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="products" element={<Product />} />
+          <Route path="product/:slug" element={<Product />} />
+          <Route path="products" element={<Products />} />
           <Route path="account" element={<Account />} />
           <Route path="about" element={<AboutUs />} />
 

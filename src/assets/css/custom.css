@@ -7,10 +7,10 @@
 }
 
 .product-detail-tabs li {
-  @apply relative py-2 px-4 hover:bg-slate-100 rounded-ss-lg rounded-se-lg;
+  @apply relative py-2 px-4 hover:text-primary-400 rounded-ss-lg rounded-se-lg;
   &.active {
-    @apply bg-main rounded-ss-lg rounded-se-lg text-white;
-    &::after,
+    @apply rounded-ss-lg rounded-se-lg hover:text-primary-600 underline;
+    /* &::after,
     &::before {
       --border-radius: 1.5rem;
       content: "";
@@ -30,12 +30,8 @@
       right: calc(var(--border-radius) * -1);
       box-shadow: -5px 5px 0 5px #3b82f6;
       border-radius: 0 0 0 999px;
-    }
+    } */
   }
-}
-
-.product-colors > div {
-  @apply size-4 rounded-full cursor-pointer transition-all duration-150 ease-in;
 }
 
 /* Prime-React Components Start */
@@ -74,4 +70,21 @@
 
 .PhoneInputCountry {
   @apply border-r pr-2;
+}
+
+#category-cards {
+  li {
+    @apply text-center space-y-2 min-w-20 md:min-w-28;
+
+    div {
+      @apply w-full flex justify-center;
+
+      img {
+        @apply rounded-full size-14 md:size-24;
+      }
+    }
+  }
+  p {
+    @apply font-semibold text-sm md:text-lg;
+  }
 }

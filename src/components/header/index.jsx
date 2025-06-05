@@ -2,7 +2,11 @@ import { Icon } from "@iconify-icon/react/dist/iconify.js";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { openCartModal, openCategoryModal } from "../../store/modals/slice";
+import {
+  openCartModal,
+  openCategoryModal,
+  openWishlistModal,
+} from "../../store/modals/slice";
 
 function Header() {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -19,14 +23,29 @@ function Header() {
     return () => document.removeEventListener("scroll", handleScroll);
   }, []);
 
-  function openCart() {
-    dispatcher(openCartModal());
+  function handleHeaderClicks(type) {
     document.body.style.overflow = "hidden";
+    switch (type) {
+      case "cart":
+        dispatcher(openCartModal());
+        break;
+      case "category":
+        dispatcher(openCategoryModal());
+        break;
+      case "wishlist":
+        dispatcher(openWishlistModal());
+        break;
+    }
   }
-  function openCategorySidebar() {
-    dispatcher(openCategoryModal());
-    document.body.style.overflow = "hidden";
-  }
+
+  // function openCart() {
+  //   dispatcher(openCartModal());
+  //   document.body.style.overflow = "hidden";
+  // }
+  // function openCategorySidebar() {
+  //   dispatcher(openCategoryModal());
+  //   document.body.style.overflow = "hidden";
+  // }
 
   return (
     <header className={`w-full`}>
@@ -58,8 +77,12 @@ function Header() {
           <ul className="header-links lg:w-1/4 flex items-center gap-3 lg:justify-around">
             <Link to={"products"}>Products</Link>
             <Link to={"account"}>Account</Link>
-            <Link to={"wishlist"}>Wishlist</Link>
-            <Link onClick={openCart}>Cart</Link>
+            <Link id="wishlist" onClick={() => handleHeaderClicks("wishlist")}>
+              Wishlist
+            </Link>
+            <Link id="cart" onClick={() => handleHeaderClicks("cart")}>
+              Cart
+            </Link>
           </ul>
         </nav>
       </div>
@@ -70,7 +93,7 @@ function Header() {
           <span className="border-r py-4 pr-4">
             <button
               className="flex items-center gap-2"
-              onClick={openCategorySidebar}
+              onClick={() => handleHeaderClicks("category")}
             >
               <Icon icon={"material-symbols-light:menu"} width={20} />
               <span>Browse Categories</span>

@@ -9,7 +9,7 @@ const Select = ({
   register,
   name,
   readonly,
-  value,
+  value = "",
   error,
   icon,
   disabled,

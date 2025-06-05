@@ -90,54 +90,67 @@ function Home() {
 
       {/* Category Cards Start */}
       <div className="w-full overflow-hidden">
-        <ul className="flex items-center justify-evenly gap-4 [&_li]:text-center [&_li]:space-y-2 [&_p]:font-semibold [&_p]:text-sm [&_p]:md:text-lg overflow-x-scroll">
+        <ul
+          id="category-cards"
+          className="w-full flex items-center justify-evenly gap-4 overflow-x-auto"
+        >
           <li>
-            <div className="w-full flex justify-center rounded-full size-14 md:size-auto">
-              <img
-                className="rounded-full"
-                src="https://picsum.photos/140"
-                alt=""
-              />
+            <div>
+              <img src="https://picsum.photos/140" alt="" />
             </div>
             <p>Furniture</p>
           </li>
           <li>
-            <div className="w-full flex justify-center rounded-full size-14 md:size-auto">
-              <img
-                className="rounded-full"
-                src="https://picsum.photos/140"
-                alt=""
-              />
+            <div>
+              <img src="https://picsum.photos/140" alt="" />
             </div>
             <p>Clothing</p>
           </li>
           <li>
-            <div className="w-full flex justify-center rounded-full size-14 md:size-auto">
-              <img
-                className="rounded-full"
-                src="https://picsum.photos/140"
-                alt=""
-              />
+            <div>
+              <img src="https://picsum.photos/140" alt="" />
             </div>
             <p>Televisions</p>
           </li>
           <li>
-            <div className="w-full flex justify-center rounded-full size-14 md:size-auto">
-              <img
-                className="rounded-full"
-                src="https://picsum.photos/140"
-                alt=""
-              />
+            <div>
+              <img src="https://picsum.photos/140" alt="" />
             </div>
             <p>Laptop</p>
           </li>
           <li>
-            <div className="w-full flex justify-center rounded-full size-14 md:size-auto">
-              <img
-                className="rounded-full"
-                src="https://picsum.photos/140"
-                alt=""
-              />
+            <div>
+              <img src="https://picsum.photos/140" alt="" />
+            </div>
+            <p>Headphones</p>
+          </li>
+          <li>
+            <div>
+              <img src="https://picsum.photos/140" alt="" />
+            </div>
+            <p>Headphones</p>
+          </li>
+          <li>
+            <div>
+              <img src="https://picsum.photos/140" alt="" />
+            </div>
+            <p>Headphones</p>
+          </li>
+          <li>
+            <div>
+              <img src="https://picsum.photos/140" alt="" />
+            </div>
+            <p>Headphones</p>
+          </li>
+          <li>
+            <div>
+              <img src="https://picsum.photos/140" alt="" />
+            </div>
+            <p>Headphones</p>
+          </li>
+          <li>
+            <div>
+              <img src="https://picsum.photos/140" alt="" />
             </div>
             <p>Headphones</p>
           </li>
