@@ -46,7 +46,7 @@ const Modal = ({
           <Transition appear show={showModal} as={Fragment}>
             <Dialog
               as="div"
-              className="relative z-[99999]"
+              className="relative z-99999"
               onClose={!disableBackdrop ? closeModal : returnNull}
             >
               {!disableBackdrop && (
@@ -59,7 +59,7 @@ const Modal = ({
                   leaveFrom={noFade ? "" : "opacity-100"}
                   leaveTo={noFade ? "" : "opacity-0"}
                 >
-                  <div className="fixed inset-0 bg-slate-900/50 backdrop-filter backdrop-blur-sm" />
+                  <div className="fixed inset-0 bg-slate-900/50 backdrop-filter backdrop-blur-xs" />
                 </Transition.Child>
               )}
 
@@ -113,7 +113,7 @@ const Modal = ({
         </>
       ) : (
         <Transition appear show={activeModal} as={Fragment}>
-          <Dialog as="div" className="relative z-[99999]" onClose={onClose}>
+          <Dialog as="div" className="relative z-99999" onClose={onClose}>
             <Transition.Child
               as={Fragment}
               enter={noFade ? "" : "duration-300 ease-out"}
@@ -124,7 +124,7 @@ const Modal = ({
               leaveTo={noFade ? "" : "opacity-0"}
             >
               {!disableBackdrop && (
-                <div className="fixed inset-0 bg-slate-900/50 backdrop-filter backdrop-blur-sm" />
+                <div className="fixed inset-0 bg-slate-900/50 backdrop-filter backdrop-blur-xs" />
               )}
             </Transition.Child>
 

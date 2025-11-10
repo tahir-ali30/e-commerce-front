@@ -8,7 +8,7 @@ import { Rating } from "primereact/rating";
 function Products() {
   return (
     <>
-      <div className="grid grid-cols-[300px,1fr] gap-4 relative">
+      <div className="grid grid-cols-[300px_1fr] gap-4 relative">
         {/* Filter */}
         <div className="border rounded-md p-5 space-y-3 max-h-max sticky top-28">
           <p className="text-xl font-bold">Filter By</p>

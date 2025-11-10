@@ -143,7 +143,7 @@ const Textinput = ({
         <div
           className={` mt-2 ${
             msgTooltip
-              ? " inline-block bg-danger-500 text-white text-[10px] px-2 py-1 rounded"
+              ? " inline-block bg-danger-500 text-white text-[10px] px-2 py-1 rounded-sm"
               : " text-danger-500 block text-sm"
           }`}
         >
@@ -155,7 +155,7 @@ const Textinput = ({
         <div
           className={` mt-2 ${
             msgTooltip
-              ? " inline-block bg-success-500 text-white text-[10px] px-2 py-1 rounded"
+              ? " inline-block bg-success-500 text-white text-[10px] px-2 py-1 rounded-sm"
               : " text-success-500 block text-sm"
           }`}
         >

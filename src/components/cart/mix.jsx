@@ -50,7 +50,7 @@ export default function CartSidebarMix() {
     <Dialog open={cartModal} onClose={closeCart} className="relative z-10">
       <DialogBackdrop
         transition
-        className="fixed inset-0 bg-black/75 transition-opacity duration-500 ease-in-out data-[closed]:opacity-0"
+        className="fixed inset-0 bg-black/75 transition-opacity duration-500 ease-in-out data-closed:opacity-0"
       />
 
       <div className="fixed inset-0 overflow-hidden">
@@ -58,7 +58,7 @@ export default function CartSidebarMix() {
           <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
             <DialogPanel
               transition
-              className="pointer-events-auto w-screen max-w-md transform transition duration-500 ease-in-out data-[closed]:translate-x-full sm:duration-700"
+              className="pointer-events-auto w-screen max-w-md transform transition duration-500 ease-in-out data-closed:translate-x-full sm:duration-700"
             >
               <div className="flex h-full flex-col bg-white shadow-xl">
                 <div className="flex-1 overflow-y-auto">
@@ -107,7 +107,7 @@ export default function CartSidebarMix() {
                   <div className="mt-6">
                     <button
                       href="#"
-                      // className="w-full flex items-center justify-center rounded-md border border-transparent bg-main px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primary-600"
+                      // className="w-full flex items-center justify-center rounded-md border border-transparent bg-main px-6 py-3 text-base font-medium text-white shadow-xs hover:bg-primary-600"
                       className="btn btn-primary"
                     >
                       Checkout

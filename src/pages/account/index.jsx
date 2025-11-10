@@ -11,7 +11,7 @@ function Account() {
         <div className="border-b pb-3 px-4 mb-8">
           <span className="font-semibold">Your Account - {activeTab}</span>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-[350px,1fr] items-center gap-x-10 gap-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] items-center gap-x-10 gap-y-5">
           <div className="grid gap-4">
             {[
               "Information",

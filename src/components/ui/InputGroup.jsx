@@ -88,7 +88,7 @@ const InputGroup = ({
                 {...rest}
                 className={`${
                   error ? " has-error" : " "
-                } input-group-control block w-full focus:outline-none py-2 ${className}  `}
+                } input-group-control block w-full focus:outline-hidden py-2 ${className}  `}
                 placeholder={placeholder}
                 readOnly={readonly}
                 disabled={disabled}
@@ -99,7 +99,7 @@ const InputGroup = ({
             {!name && !isMask && (
               <input
                 type={type === "password" && open === true ? "text" : type}
-                className={`input-group-control block w-full focus:outline-none py-2 ${className}`}
+                className={`input-group-control block w-full focus:outline-hidden py-2 ${className}`}
                 placeholder={placeholder}
                 readOnly={readonly}
                 disabled={disabled}
@@ -178,7 +178,7 @@ const InputGroup = ({
         <div
           className={` mt-2 ${
             msgTooltip
-              ? " inline-block bg-danger-500 text-white text-[10px] px-2 py-1 rounded"
+              ? " inline-block bg-danger-500 text-white text-[10px] px-2 py-1 rounded-sm"
               : " text-danger-500 block text-sm"
           }`}
         >
@@ -190,7 +190,7 @@ const InputGroup = ({
         <div
           className={` mt-2 ${
             msgTooltip
-              ? " inline-block bg-success-500 text-white text-[10px] px-2 py-1 rounded"
+              ? " inline-block bg-success-500 text-white text-[10px] px-2 py-1 rounded-sm"
               : " text-success-500 block text-sm"
           }`}
         >

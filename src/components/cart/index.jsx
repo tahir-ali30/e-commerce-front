@@ -14,7 +14,7 @@ function Cart() {
 
   return (
     <div
-      className={`fixed inset-0 z-10 grid grid-cols-[1fr,450px] transition-all duration-500 ease-in-out ${
+      className={`fixed inset-0 z-10 grid grid-cols-[1fr_450px] transition-all duration-500 ease-in-out ${
         cartModal ? "opacity-100 visible" : "opacity-0 invisible"
       }`}
     >

@@ -5,7 +5,7 @@ import NotFound from "../../assets/images/vectors/not-found.jpg";
 
 function ProductCard({ data, addToCart }) {
   return (
-    <div className="relative space-y-1.5 group border rounded-sm p-3">
+    <div className="relative space-y-1.5 group border rounded-xs p-3">
       <Link to={`/product/${data?.slug}`} className="relative ">
         {/* <img
           src="https://picsum.photos/200"

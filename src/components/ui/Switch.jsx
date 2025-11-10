@@ -40,7 +40,7 @@ const Swicth = ({
           `}
         >
           {badge && value && (
-            <span className="absolute leading-[1px] left-1 top-1/2 -translate-y-1/2 capitalize font-bold text-white tracking-[1px]">
+            <span className="absolute leading-px left-1 top-1/2 -translate-y-1/2 capitalize font-bold text-white tracking-[1px]">
               {prevIcon ? (
                 <Icon icon={prevIcon} />
               ) : (
@@ -49,7 +49,7 @@ const Swicth = ({
             </span>
           )}
           {badge && !value && (
-            <span className="absolute right-1 leading-[1px] top-1/2 -translate-y-1/2 capitalize font-bold text-slate-900 tracking-[1px]">
+            <span className="absolute right-1 leading-px top-1/2 -translate-y-1/2 capitalize font-bold text-slate-900 tracking-[1px]">
               {nextIcon ? (
                 <Icon icon={nextIcon} />
               ) : (

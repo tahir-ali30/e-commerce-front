@@ -4,5 +4,5 @@
 
 .btn-primary {
   @apply bg-main hover:bg-blue-700 text-white 
-  grow active:outline-1 active:outline-black active:outline outline-offset-2;
+  grow active:outline-1 active:outline-black active:outline-solid outline-offset-2;
 }

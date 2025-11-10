@@ -235,7 +235,7 @@ function Home() {
       <section className="space-y-4">
         <span className="text-4xl font-medium">New Products</span>
         <Swiper
-          className="!w-full"
+          className="w-full!"
           slidesPerView={2}
           spaceBetween={30}
           modules={[Navigation]}
@@ -269,7 +269,7 @@ function Home() {
       {/* Brands Section Start */}
       <section className="my-5">
         <Swiper
-          className="!w-full border-y"
+          className="w-full! border-y"
           slidesPerView={3}
           spaceBetween={30}
           modules={[Navigation]}

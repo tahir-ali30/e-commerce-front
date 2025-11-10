@@ -34,7 +34,7 @@ function CategorySideBar() {
     >
       <DialogBackdrop
         transition
-        className="fixed inset-0 bg-black/75 transition-opacity duration-500 ease-in-out data-[closed]:opacity-0"
+        className="fixed inset-0 bg-black/75 transition-opacity duration-500 ease-in-out data-closed:opacity-0"
       />
 
       <div className="fixed inset-0 overflow-hidden">
@@ -42,7 +42,7 @@ function CategorySideBar() {
           <div className="pointer-events-none fixed inset-y-0 left-0 flex max-w-full">
             <DialogPanel
               transition
-              className="pointer-events-auto w-screen max-w-xs transform transition duration-500 ease-in-out data-[closed]:-translate-x-full sm:duration-700"
+              className="pointer-events-auto w-screen max-w-xs transform transition duration-500 ease-in-out data-closed:-translate-x-full sm:duration-700"
             >
               <div className="flex h-full flex-col bg-white shadow-xl">
                 <div className="flex-1 overflow-y-auto">

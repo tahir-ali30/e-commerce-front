@@ -33,7 +33,7 @@ function Product() {
     <>
       {/* Breadcrumbs Start */}
       <div className="flex flex-wrap items-center gap-5 divide-x *:pl-4 pb-8">
-        <span className="!pl-0">
+        <span className="pl-0!">
           <Link>Home</Link>
         </span>
         <span>

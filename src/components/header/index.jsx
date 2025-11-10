@@ -64,7 +64,7 @@ function Header() {
             <input
               type="text"
               placeholder="Search Here"
-              className="p-1 grow outline-none text-black"
+              className="p-1 grow outline-hidden text-black"
             />
             <button className="flex justify-center items-center">
               <Icon

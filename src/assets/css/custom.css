@@ -47,9 +47,9 @@
 
 /* InputNumber Component */
 .p-inputnumber {
-  @apply border-2 rounded-md outline-none;
+  @apply border-2 rounded-md outline-hidden;
   .p-inputnumber-input {
-    @apply p-1 pl-3 outline-none;
+    @apply p-1 pl-3 outline-hidden;
   }
   .p-inputnumber-button-group {
     @apply divide-y border-l;
